@@ -1,17 +1,15 @@
 {
-  "name": "stackoverflowclone",
+  "name": "instioverflow",
   "version": "1.0.0",
-  "description": "StackOverflow clone with it's main functionalities",
-  "main": "server.js",
+  "description": "Discussion Forum",
+  "main": "index.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "installDep": "npm i && cd client && npm i",
-    "auditDep": "npm audit fix && cd client && npm audit fix"
+    "server": "nodemon index.js",
+    "UI": "npm start --prefix UI",
+    "dev": "concurrently \"npm run server\" \"npm run UI\""
   },
-  "author": "Mayank Aggarwal",
+  "author": "Ashwani Jha",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
