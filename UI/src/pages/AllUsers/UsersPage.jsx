@@ -20,7 +20,7 @@ const UsersPage = ({ getUsers, user: { users, loading }  }) => {
                 <div id='mainbar' className='users-page fc-black-800'>
                     <h1 className='headline'>Users</h1>
                     <div className='headline-count'>
-                        <span>1,025 users</span>
+                        
                     </div>
                     <div className='user-browser'>
                         <div className='grid-layout'>

@@ -3,11 +3,18 @@ import "./main.scss";
 import { useLocation } from 'react-router-dom';
 import Card from "react-bootstrap/Card";
 class Main extends Component {
-    courses = { 
-        CS744: "this is system course",
-        CS725: "this is machine Learning course",
-        CS601: "this is algorithms course",
-        CS699: "this is Lab course"
+    courses = {
+        CS101: "Computer Programming and Utilization", 
+        CS744: "System Course",
+        CS725: "Machine Learning course",
+        CS601: "Algorithms course",
+        CS699: "Lab course",
+        CS626: "NLP course",
+        CS726: "Advanced Machine Learning course",
+        CS602: "Applied Algorithms",
+        CS618: "Program Analysis course"
+        
+
       }
     goToForum(id) {
           console.log(id);
@@ -32,7 +39,7 @@ class Main extends Component {
                         <div onClick={() => this.goToForum(keyName)}>
                     <Card style={{ width: '180rem' }}>
                     {/* <CardActionArea component={SideBar} to="/questions"> */}
-                                    <Card.Img variant="top" src="holder.js/100px180" />
+                                    <Card.Img />
                                     <Card.Body>
                                         <Card.Title>{keyName}</Card.Title>
                                         <Card.Text>

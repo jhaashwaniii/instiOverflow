@@ -23,7 +23,7 @@ const TagsPage = ({ getTags , tag: { tags, loading }}) => {
                         A tag is a keyword or label that categorizes your question with other, similar questions. Using the right tags makes it easier for others to find and answer your question.
                     </p>
                     <div className='headline-count'>
-                        <span>1,025 tags</span>
+                        
                     </div>
                     <div className='user-browser'>
                         <div className='grid-layout'>
