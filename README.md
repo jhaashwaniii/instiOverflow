@@ -51,6 +51,6 @@ Login with root user-
     ```
     Option 1 (for running both the servers simultaneously):
     
-    npm run dev
+    npm run instioverflow
     
     ```
