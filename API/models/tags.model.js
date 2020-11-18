@@ -1,4 +1,4 @@
-const helperFunction = require('../helpers/helperFunction');
+const helperFunction = require('../helperfunction/helperFunction');
 
 // constructor
 const Tag = function() {};

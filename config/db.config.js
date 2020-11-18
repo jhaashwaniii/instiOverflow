@@ -6,15 +6,9 @@ dotenv.config();
 
 const pool  = mysql.createPool({
     connectionLimit : 10,
-    // host: process.env.HOST,
-    // user: process.env.USER,
-    // password: process.env.PASSWORD,
-    // database: process.env.DATABASE,
-    // multipleStatements: true
     host: "localhost",
     user:"root",
     password: "mysql@123",
-    // database:"stackoverflow",
     database:"stackover",
     multipleStatements: true
 });

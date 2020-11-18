@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-const helperFunction = require('../helpers/helperFunction');
+const helperFunction = require('../helperfunction/helperFunction');
 const Post = require('../models/posts.model');
 
 const getPosts = (req, res) => {

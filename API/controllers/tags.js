@@ -1,4 +1,4 @@
-const helperFunction = require('../helpers/helperFunction');
+const helperFunction = require('../helperfunction/helperFunction');
 const Tag = require('../models/tags.model');
 
 const getTags = (req, res) => {

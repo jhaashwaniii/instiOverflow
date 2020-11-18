@@ -1,4 +1,4 @@
-const helperFunction = require('../helpers/helperFunction')
+const helperFunction = require('../helperfunction/helperFunction')
 
 module.exports = (req ,res , next) => {
     const { username,password } = req.body;

@@ -1,4 +1,4 @@
-const helperFunction = require('../helpers/helperFunction');
+const helperFunction = require('../helperfunction/helperFunction');
 const User = require('../models/users.model');
 const { validationResult } = require('express-validator');
 

@@ -1,5 +1,5 @@
-const auth = require('../middleware/auth');
-const checkOwnership = require('../middleware/checkOwnership');
+const auth = require('../middlewares/auth');
+const checkOwnership = require('../middlewares/checkOwnership');
 const express = require('express');
 const router = express.Router();
 const { check } = require('express-validator');

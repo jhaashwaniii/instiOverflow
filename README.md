@@ -1,17 +1,21 @@
 # InstiOverflow
  
 
-#### Back-end Dev
+
+
+### GitHub
+* Github Repo Link-https://github.com/jhaashwaniii/instiOverflow
+
+
+#### Back-end
 * For handling server requests: `Node.js with Express.js Framework`
 * Database: `MySQL`
 * API tested using: `POSTMAN`
 
-#### Front-end Dev
+#### Front-end
 * Front-end Framework: `React.js (with Redux and react-router)`
 * Styling: `SASS` and `BOOTSTRAP`
 
-### GitHub
-* Github Repo Link-https://github.com/jhaashwaniii/instiOverflow
 
 ## Guidelines to setup
 1. Install node and npm

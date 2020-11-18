@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-const helperFunction = require('../helpers/helperFunction');
+const helperFunction = require('../helperfunction/helperFunction');
 const Answer = require('../models/answers.model');
 const User = require('../models/users.model');
 
