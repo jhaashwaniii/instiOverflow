@@ -4,14 +4,22 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../redux/auth/auth.actions'
 
+
+
+
 import { ReactComponent as Logo } from '../../assets/LogoMd.svg';
+
 import { ReactComponent as Search } from '../../assets/Search.svg';
+
 
 import './navbar.scss';
 
+
 const Header = ({ auth: { isAuthenticated, loading }, logout }) => {
+
     const authLinks = (
         <div className='btns'>
+
             <Link onClick={ logout } to='/login'>
                 <button type='button' className='s-btn s-btn__filled'>Log out</button>
             </Link>
