@@ -7,14 +7,6 @@
 * Github Repo Link-https://github.com/jhaashwaniii/instiOverflow
 
 
-#### Back-end
-* For handling server requests: `Node.js with Express.js Framework`
-* Database: `MySQL`
-* API tested using: `POSTMAN`
-
-#### Front-end
-* Front-end Framework: `React.js (with Redux and react-router)`
-* Styling: `SASS` and `BOOTSTRAP`
 
 
 ## Guidelines to setup
@@ -55,3 +47,13 @@ Login with root user-
     ```
 *   npm run instioverflow 
     ```
+
+
+#### Back-end
+* For handling server requests: `Node.js with Express.js Framework`
+* Database: `MySQL`
+* API tested using: `POSTMAN`
+
+#### Front-end
+* Front-end Framework: `React.js (with Redux and react-router)`
+* Styling: `SASS` and `BOOTSTRAP`
