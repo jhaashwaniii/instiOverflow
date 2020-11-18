@@ -18,6 +18,7 @@ import Alert from './components/alert/alert.component';
 import { loadUser } from "./redux/auth/auth.actions";
 
 import Header from "./components/navbar/navbar";
+
 import setAuthToken from "./redux/auth/auth.utils";
 
 if (localStorage.token){
@@ -40,6 +41,7 @@ const App = () => {
                     <Route exact path='/dashboard/:courseId/add/question' component={PostForm} />
                     <Route exact path='/dashboard/:courseId' render={(props) => <HomePage {...props}/>}/>
                     {/* <Route exact path='/questions' component={QuestionsPage} /> */}
+                    
                     <Route exact path='/tags' component={TagsPage} />
                     <Route exact path='/users' component={UsersPage} />
                     <Route exact path='/jobs' component={HomePage} />
