@@ -7,7 +7,7 @@
     "start": "node server",
     "server": "nodemon index.js",
     "UI": "npm start --prefix UI",
-    "dev": "concurrently \"npm run server\" \"npm run UI\""
+    "instioverflow": "concurrently \"npm run server\" \"npm run UI\""
   },
   "author": "Ashwani Jha",
   "license": "MIT",
