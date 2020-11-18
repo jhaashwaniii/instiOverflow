@@ -45,15 +45,13 @@ Login with root user-
 
 4. Run these commands then - 
     ```
-*    npm install (UI , API and instiOverflow folder)
+*    npm install (Run this comman i9nUI , API and instiOverflow folder)
     ```
 3. Run `instiOverflow.sql` file in the mysql client
     ```
 *    mysql -u root -p  < instiOverflow.sql   (user-root)
-    ```
+     ```
 4. Start the servers
     ```
-    
-*   npm run instioverflow
-    
+*   npm run instioverflow 
     ```
