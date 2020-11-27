@@ -1,3 +1,8 @@
+/** Express router providing user related routes
+ * @module models/tags
+ */
+
+
 const helperFunction = require('../helperfunction/helperFunction');
 
 // constructor

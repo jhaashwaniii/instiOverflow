@@ -1,28 +1,32 @@
+
+/** 
+ * @module models/answers
+ */
+
 const helperFunction = require('../helperfunction/helperFunction');
 
 /**
- * @typedef {Object} IAnswerConf
+ * @typedef {Object} Answer
  * @property {string} body - it contains question content
  * @property {number} user_id - User Id
  * @property {number} post_id - Question Id
  */
 
-/**
- * @param {IAnswerConf} answer
- * @property {string} body
- * @property {number} user_id
- * @property {number} post_id 
- */
+
 const Answer = function(answer) {
     this.body = answer.body;
     this.user_id = answer.user_id;
     this.post_id = answer.post_id;
 };
 
+
+
 /**
- * @param {Answer} newAnswer
- * @param {(err: Error, data: string) => void} result
+ * @method create
+ * @param {Answer} newAnswer -Stores answer object
+ * @param {Json} result -Result returned in json format
  */
+
 Answer.create = (newAnswer, result) => {
     const query = `INSERT INTO answers(body,user_id,post_id) VALUES(?,?,?);`;
 
@@ -45,6 +49,13 @@ Answer.create = (newAnswer, result) => {
         });
 };
 
+
+/**
+ * @method remove
+ * @param {integer} id -Id of answer
+ * @param {Json} result -Result returned in json format
+ */
+
 Answer.remove = (id, result) => {
     const query = ` DELETE FROM answers WHERE id = ?;`;
 
@@ -65,6 +76,13 @@ Answer.remove = (id, result) => {
             );
         });
 }
+
+
+/**
+ * @method retriveAll
+ * @param {integer} postId -Id of question
+ * @param {Json} result -Stores all answers for given question
+ */
 
 Answer.retrieveAll = (postId, result) => {
     let query = ` SELECT

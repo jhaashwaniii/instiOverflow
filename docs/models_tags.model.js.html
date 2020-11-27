@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: routing/tags.js</title>
+    <title>JSDoc: Source: models/tags.model.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: routing/tags.js</h1>
+    <h1 class="page-title">Source: models/tags.model.js</h1>
 
     
 
@@ -27,26 +27,42 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/** Express router providing user related routes
- * @module routers/tags
- */
-
-const express = require('express');
-const router = express.Router();
-const tagsController = require('../controllers/tags');
-
-
-
-/** 
- * Get all tags
- * @name  get all tags
- *  @route {GET} /api/tags
+ * @module models/tags
  */
 
 
+const helperFunction = require('../helperfunction/helperFunction');
 
-router.get('/', tagsController.getTags);
+// constructor
+const Tag = function() {};
 
-module.exports = router;</code></pre>
+Tag.retrieveAll = (result) => {
+    const query =  `SELECT 
+                        tags.id,posts.id,tagname,COUNT(DISTINCT posts.id) 
+                        as posts_count,tags.created_at 
+                        FROM tags 
+                        LEFT JOIN posttag ON posttag.tag_id = tags.id 
+                        LEFT JOIN posts ON posts.id = posttag.post_id 
+                        GROUP BY tags.id ORDER BY posts_count DESC;`
+
+    pool.query(query,
+        (err, results) => {
+            if (err || results.length === 0) {
+                console.log('error: ', err);
+                result(
+                    helperFunction.responseHandler(false, err ? err.statusCode : 404, err ? err.message : 'There are no tags', null),
+                    null
+                );
+                return;
+            }
+            result(
+                null,
+                helperFunction.responseHandler(true, 200, 'Success', results)
+            );
+        });
+}
+
+module.exports = Tag;</code></pre>
         </article>
     </section>
 
