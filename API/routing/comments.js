@@ -1,3 +1,7 @@
+/**
+ * Auth is in middlewares
+ * @type {Object}-Auth is object(Functions) which is sent by middlewares
+ */
 const auth = require('../middlewares/auth');
 const checkOwnership = require('../middlewares/checkOwnership');
 const express = require('express');

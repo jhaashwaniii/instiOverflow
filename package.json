@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server",
+    "doc": "jsdoc -c jsdoc.json",
     "server": "nodemon index.js",
     "UI": "npm start --prefix UI",
     "instioverflow": "concurrently \"npm run server\" \"npm run UI\""
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
+    "jsdoc": "^3.6.6",
     "nodemon": "^2.0.2"
   }
 }
