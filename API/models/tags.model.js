@@ -7,7 +7,10 @@ const helperFunction = require('../helperfunction/helperFunction');
 
 // constructor
 const Tag = function() {};
-
+/**
+ * @method retrieveAll
+ * @param {Json} result -Result returned in json format
+ */
 Tag.retrieveAll = (result) => {
     const query =  `SELECT 
                         tags.id,posts.id,tagname,COUNT(DISTINCT posts.id) 

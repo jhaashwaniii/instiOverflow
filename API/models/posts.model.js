@@ -14,6 +14,11 @@ const Post = function(post) {
     this.courseId=post.courseId;
 };
 
+/**
+ * @method create
+ * @param {Comment} newPost -Stores Post object
+ * @param {Json} result -Result returned in json format
+ */
 Post.create = (newPost, result) => {
     const query = ` INSERT INTO posts(title,body,user_id,courseId) VALUES (?,?,?,?);
                     SET @v1 := (SELECT LAST_INSERT_ID());
@@ -38,7 +43,11 @@ Post.create = (newPost, result) => {
         );
     });
 };
-
+/**
+ * @method remove
+ * @param {integer} id -Id of comment
+ * @param {Json} result -Result returned in json format
+ */
 Post.remove = (id, result) => {
     const query = ` DELETE FROM posttag WHERE post_id = ?;
                     DELETE FROM comments WHERE post_id = ?; 
@@ -62,7 +71,11 @@ Post.remove = (id, result) => {
             );
         });
 }
-
+/**
+ * @method retrieveOne
+ * @param {integer} postId -Id of question
+ * @param {JSON} result - contains specific question of a course with  all answeres
+ */
 Post.retrieveOne = (postId, result) => {
     const query = ` SELECT 
                     posts.id,posts.user_id,tag_id,COUNT(DISTINCT answers.id) 
@@ -93,6 +106,13 @@ Post.retrieveOne = (postId, result) => {
             );
         });
 }
+/**
+ * @method retriveAll
+ * @param {integer} postId -Id of question
+ * @param {String} tagName -search Tag
+ * @param {String} courseId -courseId of the question
+ * @param {JSON} result - contains  all questions of a course
+ */
 
 Post.retrieveAll = ({ action, tagName,courseId }, result) => {
     let query = '';

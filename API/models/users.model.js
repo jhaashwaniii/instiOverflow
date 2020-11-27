@@ -8,12 +8,22 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const helperFunction = require('../helperfunction/helperFunction');
 
+/**
+ * @typedef {Object} User
+ * @property {string} usernsame - it contains username
+ * @property {string} password - stores password
+ */
 // constructor
 const User = function(user) {
     this.username = user.username;
     this.password = user.password;
 };
 
+/**
+ * @method register
+ * @param {USer} newUser -Stores user object
+ * @param {Json} result -Result returned in json format
+ */
 User.register = async (newUser, result) => {
     const salt = await bcrypt.genSalt(10);
     newUser.password = await bcrypt.hash(newUser.password, salt);
@@ -58,7 +68,11 @@ User.register = async (newUser, result) => {
                 });
         });
 };
-
+/**
+ * @method login
+ * @param {USer} newUser -Stores user object
+ * @param {Json} result -Result returned in json format
+ */
 User.login = (newUser, result) => {
     const query = `SELECT * FROM users WHERE username = ?;`;
 
@@ -113,7 +127,11 @@ User.login = (newUser, result) => {
                 });
     });
 };
-
+/**
+ * @method retrieve
+ * @param {interger} newUser -Stores user Id
+ * @param {Json} result -Result returned in json format
+ */
 User.retrieve = ({ action, id }, result) => {
     action = action.toLowerCase();
     const head = `  SELECT users.id,username,users.created_at,COUNT(DISTINCT posts.id)`;
@@ -150,7 +168,11 @@ User.retrieve = ({ action, id }, result) => {
             );
         });
 }
-
+/**
+ * @method loadUser
+ * @param {integer} user_id -Stores user Id
+ * @param {Json} result -Result returned in json format
+ */
 User.loadUser = (user_id, result) => {
     const query = `SELECT id,username,created_at FROM users WHERE id = ?;`;
 

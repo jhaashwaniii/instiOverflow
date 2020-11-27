@@ -2,7 +2,12 @@
  * @module models/comments
  */
 
-
+/**
+ * @typedef {Object} Comment
+ * @property {string} body - it contains comment content
+ * @property {number} user_id - User Id
+ * @property {number} post_id - Question Id
+ */
 const helperFunction = require('../helperfunction/helperFunction');
 
 // constructor
@@ -12,6 +17,11 @@ const Comment = function(answer) {
     this.post_id = answer.post_id;
 };
 
+/**
+ * @method create
+ * @param {Comment} newComment -Stores comment object
+ * @param {Json} result -Result returned in json format
+ */
 Comment.create = (newComment, result) => {
     const query = `INSERT INTO comments(body,user_id,post_id) VALUES(?,?,?);`;
 
@@ -34,6 +44,11 @@ Comment.create = (newComment, result) => {
         });
 };
 
+/**
+ * @method remove
+ * @param {integer} id -Id of comment
+ * @param {Json} result -Result returned in json format
+ */
 Comment.remove = (id, result) => {
     const query = ` DELETE FROM comments WHERE id = ?;`;
 
@@ -54,6 +69,11 @@ Comment.remove = (id, result) => {
             );
         });
 }
+/**
+ * @method retriveAll
+ * @param {integer} postId -Id of question
+ * @param {Json} result -Stores all comment for given question
+ */
 
 Comment.retrieveAll = (postId, result) => {
     let query = `   SELECT
