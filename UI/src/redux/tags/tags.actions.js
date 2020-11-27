@@ -1,8 +1,18 @@
+/** 
+ * @module redux/tags
+ */
+
+
 import {
     GET_TAGS,
     TAG_ERROR
 } from './tags.types';
 import axios from 'axios';
+
+/**
+ * Get All  Tags
+ * @method  getTags 
+ */
 
 export const getTags = () => async dispatch => {
     try {

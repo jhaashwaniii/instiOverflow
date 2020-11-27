@@ -1,8 +1,22 @@
+
+/** 
+ * @module redux/alert
+ */
+
+
 import { v4 as uuidv4 } from 'uuid';
 import {
     SET_ALERT,
     REMOVE_ALERT
 } from './alert.types'
+
+/**
+ * @method setAlert  
+ * @param {String} msg -Message in alert
+ * @param {alertType} alertType - Type of Alert
+ * @param {uuidv4} id -Id for alert
+ */
+
 
 export const setAlert = (msg, alertType, timeout = 5000) => dispatch => {
     const id = uuidv4();

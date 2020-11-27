@@ -1,3 +1,8 @@
+/** 
+ * @module redux/users
+ */
+
+
 import {
     GET_USERS,
     GET_USER,
@@ -6,6 +11,10 @@ import {
 
 import axios from 'axios';
 
+/**
+ * Get User
+ * @method  getUsers
+ */
 // Get users
 export const getUsers = () => async dispatch => {
     try {
@@ -22,6 +31,11 @@ export const getUsers = () => async dispatch => {
     }
 };
 
+/**
+ * Get single User
+ * @method  getUser  
+ * @param {integer} id -Id of User
+ */
 // Get user
 export const getUser = id => async dispatch => {
     try {
