@@ -1,8 +1,19 @@
+/** 
+ * @module components/alert
+ */
+
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import './alert.styles.scss';
+
+/**
+ * Component for showing details of the user.
+ * @component
+    * @param  alerts - Alerts array required to generate alert
+ */
 
 const Alert = ({ alerts }) =>
     alerts !== null &&
@@ -14,6 +25,9 @@ const Alert = ({ alerts }) =>
     ));
 
 Alert.propTypes = {
+    /**
+     * Alert 
+     */
     alerts: PropTypes.array.isRequired
 };
 

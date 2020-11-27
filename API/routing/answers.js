@@ -40,10 +40,7 @@ router.post(
         ]
     ], answersController.addAnswer);
 
-/** @route      DELETE /api/posts/answers/:id
- *  @desc       delete an answer to a post
- *  @access     Private
- */
+
 /** 
  * Delete Answer
  * @name  delete answers

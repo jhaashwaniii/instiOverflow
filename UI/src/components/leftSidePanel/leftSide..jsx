@@ -4,6 +4,10 @@ import { NavLink } from 'react-router-dom';
 import { ReactComponent as GlobalIcon } from '../../assets/Globe.svg';
 import './sideBar.styles.scss';
 
+/**
+ * Component Showing left side panel
+ * @component
+ */
 const SideBar = () => (
     <div className='side-bar-container'>
         <div className='side-bar-tabs'>

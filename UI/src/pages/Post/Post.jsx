@@ -15,6 +15,23 @@ import SideBar from '../../components/leftSidePanel/leftSide.';
 import './Post.styles.scss'
 import Spinner from "../../components/spinner/spinner";
 
+/**
+ * Page displaying Post
+ * @component
+ * @param deletePost - To delete Post
+ * @param deleteanswer - To delete answer
+ * @param addAnswer - To add answer
+ * @param deleteComment - To delete Comment
+ * @param addComment - To add comment
+ * @param getAnswers  - Get all answers
+ * @param getComments - Get all comments
+ * @param auth - Authorization
+ * @param getPost - To get Post
+ * @param answer - answer for post
+ * @param comment - comment for post
+ *  
+ */
+
 const Post = (
     {
         deletePost,

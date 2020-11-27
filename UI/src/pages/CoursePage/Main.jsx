@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "./main.scss";
 import { useLocation } from 'react-router-dom';
 import Card from "react-bootstrap/Card";
+
 class Main extends Component {
     courses = {
         CS101: "Computer Programming and Utilization", 

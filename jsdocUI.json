@@ -1,5 +1,5 @@
 {
-    "plugins": ["jsdoc-route-plugin"],
+    "plugins": ["jsdoc-route-plugin","better-docs/component"],
     
     "source": {
         "include":["UI"],

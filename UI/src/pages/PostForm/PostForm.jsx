@@ -7,6 +7,16 @@ import { useLocation } from 'react-router-dom';
 import './PostForm.styles.scss';
 import Spinner from "../../components/spinner/spinner";
 
+/**
+ * Page containing all Post
+ * @component
+ * @param auth - Details for particular post
+ * @param auth.isAuthenticated -To check user authentication
+ * @param auth.loading - Loading of post is required\
+ * @param addPost - Add post in page
+ */
+
+
 const PostForm = ({ auth:{ isAuthenticated, loading }, addPost }) => {
     const [ formData, setFormData ] = useState({
         title: '',

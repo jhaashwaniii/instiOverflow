@@ -8,6 +8,16 @@ import SideBar from '../../components/leftSidePanel/leftSide.';
 import UserPanel from './UserPanel';
 import Spinner from "../../components/spinner/spinner";
 
+/**
+ * Page containing all users
+ * @component
+ * @param getUsers - Get all users
+ * @param user - Details for particular user
+ * @param user.users -All Users
+ * @param user.loading - Loading of users is required
+ */
+
+
 const UsersPage = ({ getUsers, user: { users, loading }  }) => {
     useEffect(() => {
         getUsers();

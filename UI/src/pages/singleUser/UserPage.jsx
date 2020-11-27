@@ -11,7 +11,12 @@ import SideBar from '../../components/leftSidePanel/leftSide.';
 
 import './UserPage.styles.scss'
 import Spinner from "../../components/spinner/spinner";
-
+/**
+ * Page to show all details related to single user
+ * @component
+ * @param getUser - get all details of user
+ * @param user - single user details
+ */
 
 const UserPage = ({ getUser, user: { user, loading }, match  }) => {
     useEffect(() => {

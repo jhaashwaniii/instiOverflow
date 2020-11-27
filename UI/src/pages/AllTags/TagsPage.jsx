@@ -8,6 +8,15 @@ import SideBar from '../../components/leftSidePanel/leftSide.';
 import TagPanel from './TagPanel';
 import Spinner from "../../components/spinner/spinner";
 
+/**
+ * Page containing all tags
+ * @component
+ * @param getTags - Get all tags
+ * @param tag - Details for particular tag
+ * @param tag.tags -All Tags
+ * @param tag.loading - Loading of tags is required
+ */
+
 const TagsPage = ({ getTags , tag: { tags, loading }}) => {
     useEffect(() => {
         getTags();

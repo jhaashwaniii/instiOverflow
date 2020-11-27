@@ -6,6 +6,19 @@ import PropTypes from 'prop-types';
 
 import './UserPanel.styles.scss';
 
+
+/**
+  * Page displaying user panel
+  * @component
+ * @param user - Details for particular user
+ * @param user.id - Id of user
+ * @param user.username -username of user
+ * @param user.created_at - when user first registered
+ * @param user.posts_count - total posts associated with user
+ * @param user.tags_count  -total tags used by user
+ *  
+ */
+
 const UserPanel = ({ user: { id, username, created_at, posts_count, tags_count } }) => {
     return (
         <div className='user-panel-info s-card bs-sm h:bs-md fc-black-500'>

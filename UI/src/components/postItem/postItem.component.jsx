@@ -6,6 +6,23 @@ import { Link } from 'react-router-dom';
 
 import './postItem.styles.scss';
 
+/**
+ * Component to render a post
+ * @component
+ * @param post - Post to be displayed
+ * @param post.id - Id of post
+ * @param post.title - title of post
+ * @param post.body - description of post
+ * @param post.tagname - tags assosciated with post
+ * @param post.username - username of user who added post
+ * @param post.user_id - id of user who added post
+ * @param post.answer_count - count of answers for post
+ * @param post.comment_count - count of comments for post
+ * @param post.created - creation date & time of post
+ * @param courseId - Id of course to which post is related
+ *  
+ */
+
 const PostItem = ({ post: { id, title, body, tagname, username, user_id, answer_count, comment_count, created_at } ,courseId}) => {
     const answerVoteUp = (
         <div className='vote answer'>

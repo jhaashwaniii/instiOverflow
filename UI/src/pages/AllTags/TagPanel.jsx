@@ -6,6 +6,16 @@ import PropTypes from 'prop-types';
 
 import './TagPanel.styles.scss';
 
+/**
+  * Page displaying tag panel
+  * @component
+ * @param tag - Details for particular tag
+ * @param tag.tagname -name of tag
+ * @param tag.created_at - when tag first created
+ * @param tag.posts_count - total posts associated with this tag
+ *  
+ */
+
 const TagPanel = ({ tag: {tagname, created_at, posts_count} }) => {
     return (
         <div className='tag-card'>

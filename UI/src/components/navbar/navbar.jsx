@@ -9,7 +9,19 @@ import { ReactComponent as Search } from '../../assets/Search.svg';
 
 import './navbar.scss';
 
+/**
+ * Component showing navigation bar
+ * @component
+ * @param auth - authorization is required
+ * @param auth.isAuthenticated - Is user authenticated
+ * @param auth.loading - is page loaded
+ * @param logout - logout is reqired
+ */
+
 const Header = ({ auth: { isAuthenticated, loading }, logout }) => {
+    /**
+     * This is authorization links
+     */
     const authLinks = (
         <div className='btns'>
             <Link onClick={ logout } to='/login'>

@@ -9,6 +9,16 @@ import { ReactComponent as Logo } from '../../assets/LogoGlyphMd.svg';
 
 import './Register.styles.scss'
 
+/**
+ * Page to register user
+ * @component
+ * @param register - user details
+ * @param register.username - username of new user
+ * @param register.password  - password of new user
+ * @param isAuthenticated - Authentication is required
+ * 
+ */
+
 const Register = ({ register, isAuthenticated }) => {
     const [ formData, setFormData ] = useState({
         username: '',

@@ -8,6 +8,16 @@ import SideBar from '../../components/leftSidePanel/leftSide.';
 import PostItem from '../../components/postItem/postItem.component';
 import Spinner from "../../components/spinner/spinner";
 
+/**
+ * Page to show all details related to single tag
+ * @component
+ * @param getTagPosts - get Post related to particular tag
+ * @param post - single post details
+ * @param post.posts - all posts related to tag
+ * @param post.loading - It should be loaded
+ * 
+ */
+
 const TagPage = ({ getTagPosts, post: { posts, loading }, match  }) => {
     const location = useLocation();
     console.log("this.props",location);

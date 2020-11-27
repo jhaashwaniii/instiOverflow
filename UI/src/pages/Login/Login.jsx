@@ -6,6 +6,15 @@ import PropTypes from 'prop-types';
 
 import { ReactComponent as Logo } from '../../assets/LogoGlyphMd.svg';
 
+/**
+ * Render Login Page
+ * @component
+ * @param login - User login data
+ * @param login.username - username of user
+ * @param login.password - password of user
+ * @param isAuthenticated - user authentication required
+ */
+
 const Login = ({ login, isAuthenticated }) => {
     const [ formData, setFormData ] = useState({
         username: '',

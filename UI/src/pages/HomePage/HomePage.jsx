@@ -11,6 +11,12 @@ import Spinner from '../../components/spinner/spinner';
 import './HomePage.styles.scss';
 import { useLocation } from 'react-router-dom';
 
+/**
+ * Home page
+ * @component
+ * @param getTopPosts - get all the top posts for particular course
+ */
+
 const HomePage = ({props, getTopPosts, post: { posts, loading }  }) => {
     const location = useLocation();
     console.log("this.props",location);
