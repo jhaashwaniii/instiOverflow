@@ -2,9 +2,9 @@ const helperFunction = require('../helperfunction/helperFunction');
 
 /**
  * @typedef {Object} IAnswerConf
- * @property {string} body
- * @property {number} user_id
- * @property {number} post_id
+ * @property {string} body - it contains question content
+ * @property {number} user_id - User Id
+ * @property {number} post_id - Question Id
  */
 
 /**

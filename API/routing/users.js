@@ -1,25 +1,39 @@
+/** Express router providing user related routes
+ * @module routers/users
+ */
+
 const express = require('express');
 const router = express.Router();
 const { check } = require('express-validator');
 const checkExistence = require('../middlewares/checkExistence');
 const usersController = require('../controllers/users');
 
-/** @route      GET /api/users
- *  @desc       fetch all the users
- *  @access     Private
+/** 
+ * Get all users
+ * @name  get all users
+ *  @route {GET} /api/users
  */
+
+
 router.get('/', usersController.getUsers);
 
-/** @route      GET /api/users/:id
- *  @desc       fetch single user
- *  @access     Private
+
+/** 
+ * Get single user
+ * @name  get single user
+ *  @route {GET} /api/users/:id
  */
+
+
 router.get('/:id', usersController.getUsers);
 
-/** @route      POST /api/users/:id
- *  @desc       register a new user
- *  @access     Private
+ /** 
+ * Register user
+ * @name  Register a new user
+ *  @route {POST} /api/users/:id
  */
+
+
 router.post(
     '/',
     [

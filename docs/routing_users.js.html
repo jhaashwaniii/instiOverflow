@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: routing/comments.js</title>
+    <title>JSDoc: Source: routing/users.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: routing/comments.js</h1>
+    <h1 class="page-title">Source: routing/users.js</h1>
 
     
 
@@ -27,49 +27,50 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/** Express router providing user related routes
- * @module routers/comments
+ * @module routers/users
  */
 
-const auth = require('../middlewares/auth');
-const checkOwnership = require('../middlewares/checkOwnership');
 const express = require('express');
-
 const router = express.Router();
 const { check } = require('express-validator');
-const commentsController = require('../controllers/comments');
+const checkExistence = require('../middlewares/checkExistence');
+const usersController = require('../controllers/users');
 
 /** 
- * Get all comments
- * @name  get comments
- *  @route {GET} /api/posts/comments/:id 
+ * Get all users
+ * @name  get all users
+ *  @route {GET} /api/users
  */
-router.get('/:id', commentsController.getComments);
+
+
+router.get('/', usersController.getUsers);
+
 
 /** 
- * Add a comment
- * @name  Add comment
- *  @route {POST} /api/posts/comments/:id 
+ * Get single user
+ * @name  get single user
+ *  @route {GET} /api/users/:id
  */
-router.post(
-    '/:id',
-    [
-        auth,
-        [
-            check('body','body is required')
-                .not()
-                .isEmpty()
-        ]
-    ], commentsController.addComment);
+
+
+router.get('/:id', usersController.getUsers);
 
  /** 
- * Delete a comment
- * @name  Delete comment
- *  @route {DELETE} /api/posts/comments/:id 
+ * Register user
+ * @name  Register a new user
+ *  @route {POST} /api/users/:id
  */
 
-router.delete('/:id', [ auth, checkOwnership ], commentsController.deleteComment);
 
-
+router.post(
+    '/',
+    [
+        check('username', 'Please include a valid username').isLength({ min: 5 }),
+        check(
+            'password',
+            'Please enter a password with 5 or more characters'
+        ).isLength({ min: 5 }), checkExistence
+    ], usersController.register);
 
 module.exports = router;</code></pre>
         </article>

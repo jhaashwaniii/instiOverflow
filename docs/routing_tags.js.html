@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: routing/comments.js</title>
+    <title>JSDoc: Source: routing/tags.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: routing/comments.js</h1>
+    <h1 class="page-title">Source: routing/tags.js</h1>
 
     
 
@@ -27,49 +27,24 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/** Express router providing user related routes
- * @module routers/comments
+ * @module routers/tags
  */
 
-const auth = require('../middlewares/auth');
-const checkOwnership = require('../middlewares/checkOwnership');
 const express = require('express');
-
 const router = express.Router();
-const { check } = require('express-validator');
-const commentsController = require('../controllers/comments');
+const tagsController = require('../controllers/tags');
+
+
 
 /** 
- * Get all comments
- * @name  get comments
- *  @route {GET} /api/posts/comments/:id 
- */
-router.get('/:id', commentsController.getComments);
-
-/** 
- * Add a comment
- * @name  Add comment
- *  @route {POST} /api/posts/comments/:id 
- */
-router.post(
-    '/:id',
-    [
-        auth,
-        [
-            check('body','body is required')
-                .not()
-                .isEmpty()
-        ]
-    ], commentsController.addComment);
-
- /** 
- * Delete a comment
- * @name  Delete comment
- *  @route {DELETE} /api/posts/comments/:id 
+ * Get all tags
+ * @name  get all tags
+ *  @route {GET} /api/tags
  */
 
-router.delete('/:id', [ auth, checkOwnership ], commentsController.deleteComment);
 
 
+router.get('/', tagsController.getTags);
 
 module.exports = router;</code></pre>
         </article>

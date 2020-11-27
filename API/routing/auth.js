@@ -1,19 +1,27 @@
+/** Express router providing user related routes
+ * @module routers/auth
+ */
+
 const auth = require('../middlewares/auth');
 const express = require('express');
 const router = express.Router();
 const { check } = require('express-validator');
 const authController = require('../controllers/auth');
 
-/** @route      GET /api/auth
- *  @desc       fetch logged in user details
- *  @access     Private
+/** 
+ * Get all logged in User Details
+ * @name  get logged in users
+ *  @route {GET} /api/auth
  */
+
 router.get('/' , auth , authController.loadUser);
 
-/** @route      POST /api/auth
- *  @desc       log in user
- *  @access     Private
+/** 
+ * Log in User
+ * @name Log in User
+ *  @route {POST} /api/auth
  */
+
 router.post(
     '/',
     [
